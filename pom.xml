@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
 
 
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -57,6 +57,19 @@
             <version>${pagehelper.starter.version}</version>
         </dependency>
         <!---mybatis tk框架-->
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.6</version>
+        </dependency>
     </dependencies>
 
 

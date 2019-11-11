@@ -1,12 +1,12 @@
 package springboot.example.service.impl;
 
-import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;
 import springboot.example.entity.AgentRateConfig;
 import springboot.example.mapper.AgentRateConfigMapper;
 import springboot.example.service.AgentRateService;
+import springboot.example.system.SystemContext;
 import tk.mybatis.mapper.entity.Example;
 
 import javax.annotation.Resource;
@@ -28,7 +28,7 @@ public class AgentRateServiceImpl implements AgentRateService {
 
     @Override
     public List<AgentRateConfig> selectByPage(AgentRateConfig agentRateConfig) {
-        PageHelper.startPage(0,10);
+        PageHelper.startPage(SystemContext.getFirstResult(),SystemContext.getPageSize());
         Example example = new Example(AgentRateConfig.class);
         Example.Criteria criteria = example.createCriteria();
         criteria.andEqualTo("code",agentRateConfig.getCode());
