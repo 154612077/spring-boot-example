@@ -20,18 +20,16 @@ public class AgentController {
     public List<AgentRateConfig> getAgents(String code){
         AgentRateConfig agentRateConfig = new AgentRateConfig();
         agentRateConfig.setCode(code);
-        List<AgentRateConfig> list = agentRateService.selectByPage(agentRateConfig);
-        System.out.println(123);
-        System.out.println(list.toString());
         return agentRateService.selectByExample(agentRateConfig);
     }
-    @GetMapping("/cs/t")
-    public List<AgentRateConfig> test(String code){
+    @GetMapping("/helloPage")
+    public List<AgentRateConfig> helloPage(String code){
         AgentRateConfig agentRateConfig = new AgentRateConfig();
         agentRateConfig.setCode(code);
-        List<AgentRateConfig> list = agentRateService.selectByPage(agentRateConfig);
-        System.out.println(123);
-        System.out.println(list.toString());
-        return agentRateService.selectByExample(agentRateConfig);
+        return agentRateService.selectByPage(agentRateConfig);
+    }
+    @GetMapping("/cs/t")
+    public void test(){
+        System.out.println("过滤器");
     }
 }
