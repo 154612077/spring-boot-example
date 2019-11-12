@@ -9,4 +9,6 @@ public interface AgentRateService {
     List<AgentRateConfig> selectByExample(AgentRateConfig agentRateConfig);
 
     List<AgentRateConfig> selectByPage(AgentRateConfig agentRateConfig);
+
+    void update();
 }

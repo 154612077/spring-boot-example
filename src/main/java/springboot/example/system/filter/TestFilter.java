@@ -1,5 +1,6 @@
 package springboot.example.system.filter;
 
+import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -17,7 +18,7 @@ public class TestFilter implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         String token = servletRequest.getParameter("token");
-        if ("xzk".equals(token)){
+        if (StringUtils.isNotBlank(token)){
             filterChain.doFilter(servletRequest,servletResponse);
         }else{
             logger.error("用户验证失败");

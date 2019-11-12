@@ -4,7 +4,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import springboot.example.entity.AgentRateConfig;
 import springboot.example.service.AgentRateService;
-import springboot.example.system.SystemContext;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -20,16 +19,18 @@ public class AgentController {
     public List<AgentRateConfig> getAgents(String code){
         AgentRateConfig agentRateConfig = new AgentRateConfig();
         agentRateConfig.setCode(code);
+        agentRateService.update();
         return agentRateService.selectByExample(agentRateConfig);
     }
     @GetMapping("/helloPage")
     public List<AgentRateConfig> helloPage(String code){
         AgentRateConfig agentRateConfig = new AgentRateConfig();
         agentRateConfig.setCode(code);
+        agentRateService.update();
         return agentRateService.selectByPage(agentRateConfig);
     }
     @GetMapping("/cs/t")
     public void test(){
-        System.out.println("过滤器");
+        System.out.println("controller");
     }
 }

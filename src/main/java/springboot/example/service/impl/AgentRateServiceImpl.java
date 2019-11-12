@@ -10,6 +10,7 @@ import springboot.example.system.SystemContext;
 import tk.mybatis.mapper.entity.Example;
 
 import javax.annotation.Resource;
+import java.math.BigDecimal;
 import java.util.List;
 
 
@@ -36,5 +37,16 @@ public class AgentRateServiceImpl implements AgentRateService {
         PageInfo page = new PageInfo(list);
         System.out.println(page);
         return list;
+    }
+
+    @Override
+    public void update() {
+        AgentRateConfig agentRateConfig = new AgentRateConfig();
+        agentRateConfig.setId(576l);
+        agentRateConfig.setCode("xxxxxxx");
+        agentRateConfig.setValue(new BigDecimal(1));
+        agentRateConfig.setMonth("2");
+        agentRateConfig.setYear("33");
+        agentRateConfigMapper.updateByPrimaryKeySelective(agentRateConfig);
     }
 }
