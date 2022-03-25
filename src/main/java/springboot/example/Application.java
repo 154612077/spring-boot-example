@@ -12,7 +12,7 @@ public class Application {
     @GetMapping
     public String home(String name){
         System.out.println("姓名：" + name);
-        System.out.println("姓名123：" + name);
+        System.out.println("姓名：" + name);
         return "hello" + name;
     }
 
