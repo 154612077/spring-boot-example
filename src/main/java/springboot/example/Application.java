@@ -10,7 +10,7 @@ public class Application {
 
     public static void main(String[] args) {
         System.out.println("begin------------");
-        System.out.println("begin------------");
+        System.out.println("begin123------------");
         SpringApplication.run(Application.class,args);
     }
 }
